@@ -6,8 +6,8 @@ const sampleInput = [
 ];
 
 function saveThePrisoner(n, m, s) {
+  const realPos = m + s - 1;
   let mult = 1;
-  let realPos = m + s - 1;
   while (n * mult < realPos) {
     mult++;
   }
