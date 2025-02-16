@@ -1,6 +1,8 @@
 const sampleInput = [
   [3, 1, 2],
   [4, 10, 100],
+  [7, 9, 11],
+  [4, 8, 16],
 ];
 
 function stones(n, a, b) {
