@@ -5,14 +5,19 @@ const sampleInput = [
 ];
 
 function permutationEquation(p) {
-  // Write your code here
-  const index = {};
+  const positions = {};
+  const result = [];
 
-  p.forEach((element, i) => {
-    index[element] = p.indexOf(i + 1) + 1;
-  });
+  for (let i = 0; i < p.length; i++) {
+    positions[p[i]] = i + 1;
+  }
 
-  return Object.values(index);
+  for (let y = 1; y <= p.length; y++) {
+    const x = positions[positions[y]];
+    result.push(x);
+  }
+
+  return result;
 }
 
 for (sample of sampleInput) {
