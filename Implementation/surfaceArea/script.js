@@ -8,27 +8,24 @@ const sampleInput = [
 ];
 
 function surfaceArea(A) {
-  // Write your code here
   let price = 0;
-  for (let i = 0; i < A.length; i++) {
-    for (let j = 0; j < A[0].length; j++) {
+  const rows = A.length;
+  const cols = A[0].length;
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
       if (A[i][j] > 0) {
-        price += 2;
+        price += 2; // Top and bottom surfaces
       }
-      if (i + 1 === A.length || A[i + 1][j] < A[i][j]) {
-        price += A[i][j] - (i + 1 === A.length ? 0 : A[i + 1][j]);
-      }
-      if (j + 1 === A[0].length || A[i][j + 1] < A[i][j]) {
-        price += A[i][j] - (j + 1 === A[0].length ? 0 : A[i][j + 1]);
-      }
-      if (i - 1 < 0 || A[i - 1][j] < A[i][j]) {
-        price += A[i][j] - (i - 1 < 0 ? 0 : A[i - 1][j]);
-      }
-      if (j - 1 < 0 || A[i][j - 1] < A[i][j]) {
-        price += A[i][j] - (j - 1 < 0 ? 0 : A[i][j - 1]);
-      }
+
+      // Add the difference between current cell and adjacent cells
+      price += i === 0 ? A[i][j] : Math.max(0, A[i][j] - A[i - 1][j]); // Front
+      price += i === rows - 1 ? A[i][j] : Math.max(0, A[i][j] - A[i + 1][j]); // Back
+      price += j === 0 ? A[i][j] : Math.max(0, A[i][j] - A[i][j - 1]); // Left
+      price += j === cols - 1 ? A[i][j] : Math.max(0, A[i][j] - A[i][j + 1]); // Right
     }
   }
+
   return price;
 }
 
