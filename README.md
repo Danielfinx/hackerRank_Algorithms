@@ -1,9 +1,9 @@
 ![](https://img.shields.io/badge/Uneweb-blue)
 
-# Project Name
+# HackerRank Problems Repository
 
 > One paragraph statement about the project.
-
+<!--
 ![screenshot](./app_screenshot.png)
 
 Additional description about the project and its features.
@@ -74,3 +74,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [CC0 1.0 Universal](LICENSE) licensed.
+-->
